@@ -1,0 +1,51 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Main from "@/layouts/Main.astro";
+import { SITE } from "@/config";
+
+const today = new Date().toLocaleDateString("it-IT");
+---
+
+<Layout title={`Cookie Policy | ${SITE.title}`} description={`Informativa sui cookie di ${SITE.title}`}
+>
+  <Main pageTitle="Cookie Policy" pageDesc={`Ultimo aggiornamento: ${today}`}>
+    <section class="prose max-w-none">
+      <p>
+        Questa Cookie Policy descrive come <strong>{SITE.title}</strong> utilizza i cookie e tecnologie simili sul sito {new URL(SITE.website).host}.
+        I cookie sono piccoli file di testo che i siti inviano al dispositivo dell’utente, dove vengono memorizzati per essere poi ritrasmessi agli stessi siti alla visita successiva.
+      </p>
+
+      <h2>Categorie di cookie</h2>
+      <h3>Cookie necessari</h3>
+      <p>
+        Essenziali per il funzionamento del sito e per fornire i servizi richiesti (es. salvataggio delle preferenze sulla privacy). Non richiedono il consenso dell’utente.
+      </p>
+
+      <h3>Cookie analitici</h3>
+      <p>
+        Raccolgono informazioni aggregate sull’utilizzo del sito (pagine visitate, tempo di permanenza, ecc.) al fine di migliorare contenuti e navigazione. L’installazione avviene solo previo consenso.
+      </p>
+
+      <h3>Cookie di marketing</h3>
+      <p>
+        Abilitano funzionalità aggiuntive e personalizzazione. Possono essere impostati da noi o da partner i cui servizi utilizziamo. L’installazione avviene solo previo consenso.
+      </p>
+
+      <h2>Gestione delle preferenze</h2>
+      <p>
+        Puoi gestire o modificare in qualsiasi momento il consenso attraverso l’icona del cookie visibile in basso a sinistra su ogni pagina. In alternativa, alla prima visita ti verrà mostrato un banner per esprimere le tue preferenze.
+      </p>
+
+      <h2>Durata dei cookie</h2>
+      <p>
+        I cookie possono essere di sessione (si cancellano alla chiusura del browser) o persistenti (restano memorizzati fino alla scadenza o cancellazione manuale). Le durate specifiche dipendono dallo strumento effettivamente installato.
+      </p>
+
+      <h2>Ulteriori informazioni</h2>
+      <p>
+        Per maggiori dettagli sul trattamento dei dati personali, consulta anche la nostra <a href="/privacy-policy">Privacy Policy</a>.
+      </p>
+    </section>
+  </Main>
+</Layout>
+

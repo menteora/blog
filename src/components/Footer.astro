@@ -1,6 +1,7 @@
 ---
 import Hr from "./Hr.astro";
 import Socials from "./Socials.astro";
+import { withBase } from "@/utils/url";
 
 const currentYear = new Date().getFullYear();
 
@@ -17,10 +18,14 @@ const { noMarginTop = false } = Astro.props;
     class="flex flex-col items-center justify-between py-6 sm:flex-row-reverse sm:py-4"
   >
     <Socials centered />
-    <div class="my-2 flex flex-col items-center whitespace-nowrap sm:flex-row">
+    <div class="my-2 flex flex-col items-center whitespace-nowrap sm:flex-row gap-2 sm:gap-0">
       <span>Copyright &#169; {currentYear}</span>
       <span class="hidden sm:inline">&nbsp;|&nbsp;</span>
       <span>All rights reserved.</span>
+      <span class="hidden sm:inline">&nbsp;|&nbsp;</span>
+      <a href={withBase("/cookie-policy")} class="underline decoration-dashed underline-offset-4">Cookie Policy</a>
+      <span class="hidden sm:inline">&nbsp;|&nbsp;</span>
+      <a href={withBase("/privacy-policy")} class="underline decoration-dashed underline-offset-4">Privacy Policy</a>
     </div>
   </div>
 </footer>

@@ -1,0 +1,79 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Main from "@/layouts/Main.astro";
+import { SITE } from "@/config";
+
+const today = new Date().toLocaleDateString("it-IT");
+const siteHost = new URL(SITE.website).host;
+---
+
+<Layout title={`Privacy Policy | ${SITE.title}`} description={`Informativa sulla privacy di ${SITE.title}`}
+>
+  <Main pageTitle="Privacy Policy" pageDesc={`Ultimo aggiornamento: ${today}`}>
+    <section class="prose max-w-none">
+      <p>
+        La presente informativa descrive le modalità di trattamento dei dati personali raccolti tramite il sito <strong>{siteHost}</strong> gestito da <strong>{SITE.author}</strong>.
+      </p>
+
+      <h2>Titolare del trattamento</h2>
+      <p>
+        {SITE.author}
+        {SITE.profile ? (
+          <>
+            {" "}– Profilo: <a href={SITE.profile} target="_blank" rel="noreferrer">{SITE.profile}</a>
+          </>
+        ) : (
+          ""
+        )}
+      </p>
+
+      <h2>Dati trattati e finalità</h2>
+      <p>
+        Il sito può trattare dati di navigazione e, su base volontaria, i dati che decidi di inviare (ad es. via email o moduli di contatto, se presenti). Le finalità principali sono: erogazione dei contenuti, sicurezza del sito, gestione delle preferenze cookie e, se abilitata, analisi statistica aggregata dell’uso del sito.
+      </p>
+
+      <h2>Base giuridica</h2>
+      <ul>
+        <li>Esecuzione di misure precontrattuali/contrattuali per la fruizione del sito.</li>
+        <li>Legittimo interesse del Titolare alla sicurezza e al corretto funzionamento.</li>
+        <li>Consenso dell’utente per cookie non necessari e attività di analisi/marketing.</li>
+      </ul>
+
+      <h2>Cookie e strumenti di tracciamento</h2>
+      <p>
+        Per informazioni dettagliate consulta la nostra <a href="/cookie-policy">Cookie Policy</a> e utilizza l’icona in basso a sinistra per gestire le preferenze in qualsiasi momento.
+      </p>
+
+      <h2>Conservazione</h2>
+      <p>
+        I dati sono conservati per il tempo strettamente necessario alle finalità indicate o secondo quanto previsto dalla legge. I cookie hanno durate variabili come indicato dai relativi fornitori.
+      </p>
+
+      <h2>Destinatari</h2>
+      <p>
+        I dati potrebbero essere trattati da fornitori tecnici che erogano servizi di hosting, manutenzione o analytics, nominati responsabili del trattamento ove necessario.
+      </p>
+
+      <h2>Trasferimenti extra UE</h2>
+      <p>
+        Alcuni servizi (es. provider analytics) potrebbero comportare trasferimenti verso Paesi extra UE. In tal caso saranno adottate adeguate garanzie ai sensi del GDPR.
+      </p>
+
+      <h2>Diritti degli interessati</h2>
+      <p>
+        In qualunque momento puoi esercitare i diritti previsti dagli artt. 15–22 del GDPR (accesso, rettifica, cancellazione, limitazione, opposizione, portabilità), oltre al diritto di revocare il consenso prestato. Puoi anche proporre reclamo all’Autorità Garante competente.
+      </p>
+
+      <h2>Contatti</h2>
+      <p>
+        Per richieste relative alla privacy, contatta il Titolare attraverso i canali indicati sul sito.
+      </p>
+
+      <h2>Modifiche</h2>
+      <p>
+        Ci riserviamo di aggiornare la presente informativa per adeguarla a modifiche normative o tecniche. Le modifiche saranno pubblicate su questa pagina.
+      </p>
+    </section>
+  </Main>
+</Layout>
+
