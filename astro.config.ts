@@ -11,9 +11,15 @@ import {
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import { SITE } from "./src/config";
 
+const isCI = process.env.GITHUB_ACTIONS === "true"; // true su GitHub Actions
+const PROD_SITE = "https://menteora.github.io/blog"; // URL Pages
+const DEV_SITE  = "http://localhost:4321";                      // URL dev
+
 // https://astro.build/config
 export default defineConfig({
-  site: SITE.website,
+  site: isCI ? PROD_SITE : DEV_SITE,
+  base: isCI ? "/blog" : "/",  // se il repo è <username>.github.io, usa "/"  
+  // site: SITE.website,
   integrations: [
     sitemap({
       filter: page => SITE.showArchives || !page.endsWith("/archives"),
