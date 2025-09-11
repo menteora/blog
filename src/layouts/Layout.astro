@@ -208,6 +208,18 @@ const structuredData = {
         }
       });
     })();`}></script>
+    <script is:inline>
+      document.addEventListener('astro:page-load', () => {
+        try {
+          // Reinizializza il banner dopo le transizioni client-side
+          if (window?.silktideCookieBannerManager?.updateCookieBannerConfig) {
+            window.silktideCookieBannerManager.updateCookieBannerConfig({});
+          }
+        } catch (e) {
+          // no-op
+        }
+      });
+    </script>
   </head>
   <body>
     <slot />
