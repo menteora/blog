@@ -4,6 +4,8 @@ import { PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
 import { SITE } from "@/config";
 import { withBase } from "@/utils/url";
 import "@/styles/global.css";
+import silktideCssUrl from "@/cookie-law/silktide-consent-manager.css?url";
+import silktideJsUrl from "@/cookie-law/silktide-consent-manager.js?url";
 
 export interface Props {
   title?: string;
@@ -30,6 +32,7 @@ const {
 } = Astro.props;
 
 const socialImageURL = new URL(ogImage, Astro.url);
+const cookiePolicyHref = withBase("cookie-policy");
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -132,6 +135,105 @@ const structuredData = {
     <ClientRouter />
 
     <script is:inline src={withBase("toggle-theme.js")}></script>
+
+    <!-- Cookie Law (Silktide Consent Manager) -->
+    <link
+      rel="stylesheet"
+      id="silktide-consent-manager-css"
+      href={silktideCssUrl}
+    />
+    {(() => {
+      const html = `<script src="${silktideJsUrl}"></script>`;
+      return <Fragment set:html={html} />;
+    })()}
+    <script is:inline>
+      (function () {
+        var cookiePolicyUrl = "{cookiePolicyHref}";
+        var hasGtag =
+          typeof window !== "undefined" && typeof window.gtag === "function";
+        var hasDataLayer =
+          typeof window !== "undefined" && Array.isArray(window.dataLayer);
+
+        // Configure and initialize the cookie banner
+        window.silktideCookieBannerManager.updateCookieBannerConfig({
+          background: { showBackground: true },
+          cookieIcon: { position: "bottomLeft" },
+          cookieTypes: [
+            {
+              id: "necessary",
+              name: "Necessary",
+              description:
+                "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.</p>",
+              required: true,
+              onAccept: function () {
+                console.log("Necessary cookies enabled");
+              },
+            },
+            {
+              id: "analytics",
+              name: "Analytics",
+              description:
+                "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
+              required: false,
+              onAccept: function () {
+                if (hasGtag)
+                  gtag("consent", "update", { analytics_storage: "granted" });
+                if (hasDataLayer)
+                  window.dataLayer.push({ event: "consent_accepted_analytics" });
+              },
+              onReject: function () {
+                if (hasGtag)
+                  gtag("consent", "update", { analytics_storage: "denied" });
+              },
+            },
+            {
+              id: "advertising",
+              name: "Advertising",
+              description:
+                "<p>These cookies provide extra features and personalization to improve your experience. They may be set by us or by partners whose services we use.</p>",
+              required: false,
+              onAccept: function () {
+                if (hasGtag)
+                  gtag("consent", "update", {
+                    ad_storage: "granted",
+                    ad_user_data: "granted",
+                    ad_personalization: "granted",
+                  });
+                if (hasDataLayer)
+                  window.dataLayer.push({ event: "consent_accepted_advertising" });
+              },
+              onReject: function () {
+                if (hasGtag)
+                  gtag("consent", "update", {
+                    ad_storage: "denied",
+                    ad_user_data: "denied",
+                    ad_personalization: "denied",
+                  });
+              },
+            },
+          ],
+          text: {
+            banner: {
+              description:
+                "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic. <a href=\"" + cookiePolicyUrl + "\" target=\"_blank\">Cookie Policy.</a></p>",
+              acceptAllButtonText: "Accept all",
+              acceptAllButtonAccessibleLabel: "Accept all cookies",
+              rejectNonEssentialButtonText: "Reject non-essential",
+              rejectNonEssentialButtonAccessibleLabel: "Reject non-essential",
+              preferencesButtonText: "Preferences",
+              preferencesButtonAccessibleLabel: "Toggle preferences",
+            },
+            preferences: {
+              title: "Customize your cookie preferences",
+              description:
+                "<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>",
+              creditLinkText: "Get this banner for free",
+              creditLinkAccessibleLabel: "Get this banner for free",
+            },
+          },
+        });
+      })();
+    </script>
   </head>
   <body>
     <slot />
