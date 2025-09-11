@@ -1,4 +1,8 @@
-export const BASE = (import.meta.env.BASE_URL || "/").replace(/\/+$/, "/");
+const rawBase = import.meta.env.BASE_URL || "/";
+let normalized = rawBase;
+if (!normalized.startsWith("/")) normalized = "/" + normalized;
+if (!normalized.endsWith("/")) normalized = normalized + "/";
+export const BASE = normalized;
 
 const EXTERNAL_RE = /^(?:[a-z]+:)?\/\//i;
 
@@ -14,4 +18,3 @@ export function withBase(path: string): string {
 export function isExternal(href: string): boolean {
   return EXTERNAL_RE.test(href) || href.startsWith("mailto:") || href.startsWith("tel:");
 }
-

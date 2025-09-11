@@ -16,6 +16,10 @@ const {
   title,
   disabled = false,
 } = Astro.props;
+import { withBase, isExternal } from "@/utils/url";
+const computedHref = !href || isExternal(href) || href.startsWith("#")
+  ? href
+  : withBase(href);
 ---
 
 {
@@ -31,7 +35,7 @@ const {
   ) : (
     <a
       id={id}
-      {href}
+      href={computedHref}
       class:list={["group inline-block hover:text-accent", className]}
       aria-label={ariaLabel}
       title={title}
