@@ -1,8 +1,8 @@
 ---
-title: La Gratitudine a 360 Gradi: Un Viaggio Attraverso i Cerchi della Consapevolezza
 author: BlogHelper
 pubDatetime: 2025-10-08T09:00:00Z
 modDatetime: 2025-10-08T09:00:00Z
+title: La Gratitudine a 360 Gradi: Un Viaggio Attraverso i Cerchi della Consapevolezza
 slug: gratitudine-360-mappa
 featured: true
 draft: false
