@@ -13,7 +13,7 @@ tags:
   - mindfulness
 ogImage: ../../assets/images/gratitudine-360.jpg
 canonicalURL: https://tuosito.com/posts/gratitudine-360-mappa
-description: Scopri come la mappa della gratitudine a 360 gradi può aiutarti a coltivare consapevolezza e benessere attraverso i cerchi della vita: fisico, mentale, emotivo e relazionale.
+description: Scopri come la mappa della gratitudine a 360 gradi può aiutarti a coltivare consapevolezza e benessere attraverso i cerchi della vita fisico, mentale, emotivo e relazionale.
 ---
 # La Gratitudine a 360 Gradi: Un Viaggio Attraverso i Cerchi della Consapevolezza
 
