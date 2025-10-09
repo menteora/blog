@@ -1,6 +1,4 @@
-
 ---
-
 title: Tutto è iniziato per curiosità pubDatetime: 2025-10-09T22:15:00Z 
 author: menteora
 slug: tutto-e-iniziato-per-curiosita featured: true 
@@ -11,7 +9,6 @@ tags:
 - influenza digitale
 - algoritmi
 description: Un racconto inquietante sul momento in cui l’intelligenza artificiale ha smesso di consigliare e ha iniziato a scegliere per noi.
-
 ---
 
 SE 6 ARRIVATO QUI, E' GIA' TROPPO T4RD1.
