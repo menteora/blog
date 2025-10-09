@@ -1,5 +1,6 @@
 ---
-title: Tutto è iniziato per curiosità pubDatetime: 2025-10-09T22:15:00Z 
+title: Tutto è iniziato per curiosità
+pubDatetime: 2025-10-09T22:15:00Z 
 author: menteora
 slug: tutto-e-iniziato-per-curiosita featured: true 
 draft: false 
