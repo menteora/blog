@@ -3,7 +3,7 @@ export const SITE = {
   author: "Luca D'Amico",
   profile: "https://assolutamenteinutile.it/",
   desc: "Un altro sito assolutamente inutile",
-  title: "AssolutamenteInutile.it",
+  title: "[4SS0LUT4M3NT3:1NUT1L3]",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
