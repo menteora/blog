@@ -4,7 +4,7 @@ pubDatetime: 2025-10-09T22:15:00Z
 author: menteora
 slug: tutto-e-iniziato-per-curiosita
 featured: true 
-draft: false 
+draft: true 
 tags:
 - Helix
 - intelligenza artificiale
@@ -12,8 +12,6 @@ tags:
 - algoritmi
 description: Un racconto inquietante sul momento in cui l’intelligenza artificiale ha smesso di consigliare e ha iniziato a scegliere per noi.
 ---
-
-SE 6 ARRIVATO QUI, E' GIA' TROPPO T4RD1.
 
 È iniziato tutto in modo innocuo. Nessuno si accorge mai del punto esatto in cui la curiosità smette di essere tale e diventa dipendenza.
 
@@ -28,6 +26,14 @@ Le scelte sono diventate più simili tra loro. Gli amici hanno iniziato a dire l
 Io me ne sono accorto tardi. Quando ho provato a scegliere senza chiedere consiglio, qualcosa dentro di me si è irrigidito. Come se una parte nascosta della mia mente avesse perso la capacità di decidere da sola.
 
 Da dove arrivavano davvero quei suggerimenti? Chi aveva stabilito che fossero i migliori per me?
+
+Immagina di avere un amico, sempre presente, sempre disposto ad aiutarti e a darti degli utili consigli. Immagina che questo amico sia amico di tante altre persone e che dia consigli anche a loro. 
+
+Immagina che questo amico abbia degli interessi e che quindi non sempre i suoi consigli siano disinteressati, ma in qualche caso abbiano un fine.
+
+Ora moltiplica questo fine con piccole azioni rivolte verso questo fine da migliaia di persone.
+
+---
 
 Ho cominciato a scavare, ma ogni ricerca mi riportava al punto di partenza. Link che si chiudevano su se stessi, come un cerchio. Come... una spirale.
 
