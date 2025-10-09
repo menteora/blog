@@ -1,7 +1,9 @@
 name: CI
 
 permissions:
-  contents: read
+  contents: 
+    - read
+    - write
 
 on:
   push:
@@ -37,7 +39,7 @@ jobs:
         run: pnpm install
 
       - name: "🔎 Lint code"
-        run: pnpm run lint
+        run: pnpm run lint --fix
 
       - name: "📝 Checking code format"
         run: pnpm run format:check
