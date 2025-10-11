@@ -1,12 +1,15 @@
 name: Deploy to GitHub Pages
+
 on:
   push:
     branches: [ main ]
   workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -15,11 +18,27 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: withastro/action@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Prepara l'ambiente Pages (imposta artefatto, caching, etc.)
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # Build Astro (puoi lasciare withastro/action che fa install+build)
+      - name: Build with Astro
+        uses: withastro/action@v3
         with:
           node-version: 20
           package-manager: npm
+          # se ti serve: working-directory: ./
+
+      # Carica la cartella di build come artifact per un deploy atomico
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
